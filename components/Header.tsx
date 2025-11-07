@@ -25,7 +25,7 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="group-hover:scale-105 transition-transform duration-300 flex items-center gap-3">
               {/* Graduation cap icon */}
-              <div className="w-12 h-12">
+              <div className="w-12 h-12 group-hover:brightness-110 transition-all duration-300">
                 <Image
                   src="/graduation-cap-icon.svg"
                   alt="Sint Maarten School"
@@ -38,7 +38,7 @@ export default function Header() {
               {/* Sint Maarten logo */}
               <SintMaartenLogo className="w-16 h-16" />
             </div>
-            <span className="text-2xl font-bold text-blue-900">
+            <span className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
               Sint-Maarten
             </span>
           </Link>
@@ -49,15 +49,15 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-blue-900 font-medium transition-colors relative group"
+                className="text-gray-700 hover:text-blue-600 font-medium transition-colors relative group"
               >
                 {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 group-hover:w-full transition-all duration-300" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all duration-300" />
               </Link>
             ))}
             <Link
               href="/#inschrijven"
-              className="px-6 py-2.5 bg-gradient-to-r from-red-500 to-green-500 text-white font-semibold rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="px-6 py-2.5 bg-gray-900 text-white font-semibold rounded-full hover:bg-blue-600 hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Inschrijven
             </Link>
@@ -65,7 +65,7 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 text-gray-700 hover:text-blue-900 transition-colors"
+            className="md:hidden p-2 text-gray-700 hover:text-blue-600 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -87,7 +87,7 @@ export default function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block px-4 py-2 text-gray-700 hover:text-blue-900 hover:bg-amber-50 rounded-lg transition-colors"
+                    className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -95,7 +95,7 @@ export default function Header() {
                 ))}
                 <Link
                   href="/#inschrijven"
-                  className="block px-4 py-2.5 bg-gradient-to-r from-red-500 to-green-500 text-white font-semibold rounded-lg text-center"
+                  className="block px-4 py-2.5 bg-gray-900 text-white font-semibold rounded-lg text-center hover:bg-blue-600 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Inschrijven

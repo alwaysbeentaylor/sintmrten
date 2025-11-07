@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
+import Image from 'next/image'
 import { submitEnrollment } from '@/app/actions/enrollment'
 import { CheckCircle, Loader2 } from 'lucide-react'
 
@@ -31,11 +32,18 @@ export default function EnrollmentSection() {
   }
 
   return (
-    <section ref={ref} id="inschrijven" className="py-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-      }}></div>
+    <section ref={ref} id="inschrijven" className="py-20 bg-gray-900 text-white relative overflow-hidden">
+      {/* Background image overlay */}
+      <div className="absolute inset-0 opacity-20">
+        <Image
+          src="https://i.ibb.co/wZM051C2/Schermafbeelding-2025-11-07-205318.png"
+          alt="Background"
+          fill
+          className="object-cover"
+          quality={90}
+        />
+        <div className="absolute inset-0 bg-gray-900/60"></div>
+      </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -181,7 +189,7 @@ export default function EnrollmentSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              className="w-full px-8 py-4 bg-gray-900 text-white font-semibold rounded-xl hover:bg-blue-600 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
                 <>

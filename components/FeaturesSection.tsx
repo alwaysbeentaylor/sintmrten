@@ -76,13 +76,15 @@ export default function FeaturesSection() {
                 transition={{ delay: index * 0.1, duration: 0.5 }}
                 className="group relative"
               >
-                <div className={`absolute inset-0 bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300 rounded-2xl`} />
-                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}>
+                <div className={`absolute inset-0 bg-blue-500 opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 rounded-2xl`} style={{
+                  boxShadow: '0 0 20px rgba(59, 130, 246, 0.1), 0 0 40px rgba(34, 197, 94, 0.05), 0 0 60px rgba(239, 68, 68, 0.05)'
+                }} />
+                <div className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 group-hover:border-blue-500/30">
+                  <div className="w-16 h-16 bg-gray-900 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:bg-blue-600 transition-colors duration-300">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">{feature.description}</p>
                 </div>
               </motion.div>
             )
