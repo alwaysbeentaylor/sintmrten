@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vrije Basisschool Sint-Maarten - Moderne Website
 
-## Getting Started
+Een moderne, innovatieve website voor Vrije Basisschool Sint-Maarten gebouwd met de nieuwste technologieën.
 
-First, run the development server:
+## 🚀 Technologieën
 
+- **Next.js 16** - React framework met App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS 4** - Modern utility-first CSS
+- **Prisma** - Type-safe database ORM
+- **Framer Motion** - Smooth animations
+- **React Hook Form** - Form handling
+- **Zod** - Schema validation
+- **Nodemailer** - Email notifications
+- **Radix UI** - Accessible UI components
+
+## ✨ Features
+
+- ✅ Moderne, responsive design
+- ✅ Server-side rendering (SSR)
+- ✅ Database integratie met Prisma
+- ✅ Form handling met Server Actions
+- ✅ Email notificaties
+- ✅ Smooth animations met Framer Motion
+- ✅ SEO optimized
+- ✅ Accessible components
+- ✅ Type-safe throughout
+
+## 📦 Installatie
+
+1. Installeer dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Setup database:
+```bash
+npx prisma generate
+npx prisma db push
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Maak een `.env` bestand:
+```env
+DATABASE_URL="file:./dev.db"
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT="587"
+SMTP_USER="your-email@gmail.com"
+SMTP_PASSWORD="your-app-password"
+SMTP_FROM="your-email@gmail.com"
+ADMIN_EMAIL="info@vrijebasisschoolsijsele.be"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Start development server:
+```bash
+npm run dev
+```
 
-## Learn More
+## 🗄️ Database Schema
 
-To learn more about Next.js, take a look at the following resources:
+De website gebruikt SQLite met Prisma en bevat de volgende modellen:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Enrollment** - Inschrijvingen van kinderen
+- **ContactMessage** - Contactformulier berichten
+- **NewsletterSubscriber** - Nieuwsbrief abonnees
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Project Structuur
 
-## Deploy on Vercel
+```
+├── app/
+│   ├── actions/          # Server Actions
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Homepage
+├── components/           # React components
+├── lib/                  # Utilities
+│   ├── db.ts            # Prisma client
+│   ├── email.ts         # Email service
+│   └── validations.ts   # Zod schemas
+└── prisma/
+    └── schema.prisma    # Database schema
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Componenten
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Header** - Navigatie met mobile menu
+- **Footer** - Footer met contact info
+- **StatsSection** - Statistieken
+- **GallerySection** - Foto galerij
+- **FeaturesSection** - Features grid
+- **EnrollmentSection** - Inschrijfformulier
+- **ContactSection** - Contact informatie
+
+## 🚢 Deployment
+
+De website kan worden gedeployed op:
+- **Vercel** (aanbevolen voor Next.js)
+- **Netlify**
+- **Railway**
+- Elke andere Node.js hosting provider
+
+Voor productie:
+1. Update `.env` met productie database URL
+2. Configureer SMTP instellingen
+3. Run `npm run build`
+4. Deploy naar je hosting provider
+
+## 📝 Licentie
+
+Alle rechten voorbehouden - Vrije Basisschool Sint-Maarten
