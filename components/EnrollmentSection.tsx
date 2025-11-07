@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-import Image from 'next/image'
+import NextImage from 'next/image'
 import { submitEnrollment } from '@/app/actions/enrollment'
 import { CheckCircle, Loader2 } from 'lucide-react'
 
@@ -35,7 +35,7 @@ export default function EnrollmentSection() {
     <section ref={ref} id="inschrijven" className="py-20 bg-gray-900 text-white relative overflow-hidden">
       {/* Background image overlay */}
       <div className="absolute inset-0 opacity-20">
-        <Image
+        <NextImage
           src="https://i.ibb.co/wZM051C2/Schermafbeelding-2025-11-07-205318.png"
           alt="Background"
           fill
